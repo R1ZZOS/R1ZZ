@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Leyes Laborales</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Reproductor de música -->
+    <audio id="background-music" src="music.mp3" loop></audio>
+
+    <div class="content-container">
+        <!-- Registro -->
+        <div id="registration-container" class="container">
+            <h1>Registro</h1>
+            <form id="registration-form">
+                <label for="username">Ingresa tu nombre:</label>
+                <input type="text" id="username" name="username" required>
+                <button type="submit">Registrarse</button>
+            </form>
+        </div>
+
+        <!-- Menú -->
+        <div id="menu-container" class="container" style="display: none;">
+            <h1>Trabajo de Ley de Protección al Trabajador</h1>
+            <p>DEV: M. De La Fuente</p>
+            <p>Nombres:</p>
+            <ul>
+                <li>Máximo de la Fuente</li>
+                <li>Jeremy Flores</li>
+                <li>Francisco Alvarado</li>
+            </ul>
+            <p>Curso: 2° Nivel C</p>
+            <button onclick="startQuiz('proteccion')">Ley de Protección al Trabajador</button>
+            <button onclick="startQuiz('subcontratacion')">Ley de Subcontratación</button>
+            <button onclick="startQuiz('ambiente')">Ley de Ambiente Seguro</button>
+            <button onclick="showDashboard()">Mostrar Puntuaciones</button>
+        </div>
+
+        <!-- Quiz -->
+        <div id="quiz-container" class="container" style="display: none;">
+            <button id="back-to-menu-from-quiz" onclick="backToMenu()">Volver al Menú</button>
+            <h2 id="question"></h2>
+            <div id="options"></div>
+            <button id="confirm-button" style="display: none;" onclick="checkAnswer()">Confirmar</button>
+            <button id="next-button" style="display: none;" onclick="nextQuestion()">Siguiente</button>
+        </div>
+
+        <!-- Resultados -->
+        <div id="result-container" class="container" style="display: none;">
+            <button id="back-to-menu-from-result" onclick="backToMenu()">Volver al Menú</button>
+            <h2>Resultado</h2>
+            <p id="result"></p>
+            <button onclick="restartQuiz()">Volver al Quiz</button>
+        </div>
+
+        <!-- Dashboard -->
+        <div id="dashboard-container" class="container" style="display: none;">
+            <button id="back-to-menu-from-dashboard" onclick="backToMenu()">Volver al Menú</button>
+            <h2>Dashboard de Puntuaciones</h2>
+            <ul id="score-list"></ul>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
